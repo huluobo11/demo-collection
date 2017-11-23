@@ -15,7 +15,11 @@ import org.junit.Test;
  * @author Administrator
  * @project Test
  */
+<<<<<<< HEAD
 public class TestUrl {        
+=======
+public class TestUrl {
+>>>>>>> branch 'master' of https://github.com/huluobo11/cxftest.git
 	@Test
 	public void test() throws URISyntaxException, IOException{
 		 URL url = new URL("http://www.baidu.com");

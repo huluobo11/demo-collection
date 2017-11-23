@@ -13,7 +13,11 @@ import org.junit.Test;
 public class TestQR {
 	@Test
 	public void test() {
+<<<<<<< HEAD
 		String content = "http://www.baidu.com";
+=======
+		String content = "我不是这样的，，，";
+>>>>>>> branch 'master' of https://github.com/huluobo11/cxftest.git
 		String file = "E:/AA/test.png";
 		// 使用默认大小的png格式生成二维码
 		File file2 = new File(file);

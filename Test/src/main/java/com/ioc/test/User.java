@@ -6,6 +6,7 @@ package com.ioc.test;
  * @authorAdministrator
  */
 public class User {
+<<<<<<< HEAD
 	private int age = 10;
 	private String name;
 	private String text;
@@ -35,6 +36,9 @@ public class User {
 	public void setName(String name) {
 		this.name = name;
 	}
+=======
+	private int age=10;
+>>>>>>> branch 'master' of https://github.com/huluobo11/cxftest.git
 
 	public int getAge() {
 		return age;

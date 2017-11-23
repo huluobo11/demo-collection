@@ -1,4 +1,8 @@
 activeProfiles=mavenTest
 eclipse.preferences.version=1
+<<<<<<< HEAD
 resolveWorkspaceProjects=false
+=======
+resolveWorkspaceProjects=true
+>>>>>>> branch 'master' of https://github.com/huluobo11/cxftest.git
 version=1

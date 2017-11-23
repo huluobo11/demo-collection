@@ -4,6 +4,10 @@ import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
+<<<<<<< HEAD
+=======
+import java.util.Vector;
+>>>>>>> branch 'master' of https://github.com/huluobo11/cxftest.git
 
 import org.junit.Test;
 

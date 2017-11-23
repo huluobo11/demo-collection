@@ -2,15 +2,7 @@ package com.map;
 
 import java.util.HashSet;
 
-<<<<<<< HEAD
 import org.junit.Test;
-=======
-import javax.servlet.jsp.tagext.FunctionInfo;
-
-import org.junit.Test;
-
-import com.test.testIO;
->>>>>>> branch 'master' of https://github.com/huluobo11/cxftest.git
 
 /**
  * @date 2017年10月19日下午2:47:43

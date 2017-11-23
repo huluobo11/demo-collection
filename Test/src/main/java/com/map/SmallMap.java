@@ -3,11 +3,7 @@ package com.map;
 import java.util.Arrays;
 import java.util.Set;
 
-<<<<<<< HEAD
-=======
-import com.map.Map.Entry;
 
->>>>>>> branch 'master' of https://github.com/huluobo11/cxftest.git
 /**
  * @date 2017年10月18日下午4:00:58
  * @Description: 模拟HashMap类

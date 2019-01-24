@@ -30,14 +30,14 @@ public class UserServiceImpl implements UserService {
     @Override
     public User getOneById(long id) {
          String s = String.valueOf(3);
-        return userRepository.findOne(id);
+        return userRepository.findById(id).isPresent() ? userRepository.findById(id).get() : null;
     }
 
     @Transactional
     @CacheEvict(value = "users", key = "#root.methodName+'_'+#id")
     @Override
     public void deleteOneUser(long id) {
-        userRepository.delete(id);
+        userRepository.deleteById(id);
     }
 
 }

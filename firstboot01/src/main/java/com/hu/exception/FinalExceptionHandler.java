@@ -1,6 +1,6 @@
 package com.hu.exception;
 
-import org.springframework.boot.autoconfigure.web.ErrorController;
+import org.springframework.boot.web.servlet.error.ErrorController;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -9,9 +9,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class FinalExceptionHandler implements ErrorController {
     /**
-     * 在controller里面内容执行之前，校验一些参数不匹配啊，Get post方法不对啊之类的
+     	* 在controller里面内容执行之前，校验一些参数不匹配啊，Get post方法不对啊之类的
      */
-    @Override
+	
+	@Override
     public String getErrorPath() {
         // 错误处理逻辑
         return "404.html";

@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class MenusServiceImpl implements MenusService {
@@ -36,7 +37,11 @@ public class MenusServiceImpl implements MenusService {
 
     @Override
     public List<Menus> getThird(int parentId) {
-        Menus menus = menusRepository.findOne(parentId);
+        Optional<Menus> optional = menusRepository.findById(parentId);
+        Menus menus = null;
+		if (optional.isPresent()) {
+        	menus  =optional.get();
+        }
         int parentId1 = menus.getParentId();
         String level = parentId1 + "" + parentId;
         return menusRepository.getThird(parentId, level);

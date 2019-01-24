@@ -33,19 +33,20 @@ public class ShiroConfiguration {
         ShiroFilterFactoryBean shiroFilterFactoryBean = new ShiroFilterFactoryBean();
         // 必须设置 SecurityManager
         shiroFilterFactoryBean.setSecurityManager(securityManager);
-//拦截器.
+		//拦截器.
         Map<String, String> filterChainDefinitionMap = new LinkedHashMap<String, String>();
-//配置退出过滤器,其中的具体的退出代码Shiro已经替我们实现了
-        filterChainDefinitionMap.put("/logout", "logout");
-//<!-- 过滤链定义，从上向下顺序执行，一般将 /**放在最为下边 -->:这是一个坑呢，一不小心代码就不好使了;
-//<!-- authc:所有url都必须认证通过才可以访问; anon:所有url都都可以匿名访问-->
+		//配置退出过滤器,其中的具体的退出代码Shiro已经替我们实现了
+        filterChainDefinitionMap.put("/logout", "anon");
+        filterChainDefinitionMap.put("/login", "authc");
+		//<!-- 过滤链定义，从上向下顺序执行，一般将 /**放在最为下边 -->:这是一个坑呢，一不小心代码就不好使了;
+		//<!-- authc:所有url都必须认证通过才可以访问; anon:所有url都都可以匿名访问-->
         //配置记住我或认证通过可以访问的地址
         filterChainDefinitionMap.put("/index", "user");
         filterChainDefinitionMap.put("/", "user");
         filterChainDefinitionMap.put("/**", "authc");
-// 如果不设置默认会自动寻找Web工程根目录下的"/login.jsp"页面
-        shiroFilterFactoryBean.setLoginUrl("/login");
-// 登录成功后要跳转的链接
+		// 如果不设置默认会自动寻找Web工程根目录下的"/login.jsp"页面
+		shiroFilterFactoryBean.setLoginUrl("/login");
+		// 登录成功后要跳转的链接
         shiroFilterFactoryBean.setSuccessUrl("/index");
         //未授权界面;
         shiroFilterFactoryBean.setUnauthorizedUrl("/403");
@@ -59,9 +60,9 @@ public class ShiroConfiguration {
         DefaultWebSecurityManager securityManager = new DefaultWebSecurityManager();
         //设置realm
         securityManager.setRealm(myShiroRealm());
-//设置cacheManager
+		//设置cacheManager
         securityManager.setCacheManager(ehCacheManager());
-//        设置rememberMeCookieManager
+		//        设置rememberMeCookieManager
         securityManager.setRememberMeManager(cookieRememberMeManager());
         return securityManager;
     }
@@ -97,10 +98,8 @@ public class ShiroConfiguration {
      * @return
      */
     @Bean
-    public AuthorizationAttributeSourceAdvisor authorizationAttributeSourceAdvisor(SecurityManager
-                                                                                           securityManager) {
-        AuthorizationAttributeSourceAdvisor authorizationAttributeSourceAdvisor = new
-                AuthorizationAttributeSourceAdvisor();
+    public AuthorizationAttributeSourceAdvisor authorizationAttributeSourceAdvisor(SecurityManager securityManager) {
+        AuthorizationAttributeSourceAdvisor authorizationAttributeSourceAdvisor = new  AuthorizationAttributeSourceAdvisor();
         authorizationAttributeSourceAdvisor.setSecurityManager(securityManager);
         return authorizationAttributeSourceAdvisor;
     }
@@ -117,7 +116,7 @@ public class ShiroConfiguration {
     public SimpleCookie simpleCookie() {
         System.out.println("ShiroConfiguration.rememberMeCookie()");
         SimpleCookie simpleCookie = new SimpleCookie("rememberMe");
-//<!-- 记住我cookie生效时间30天 ,单位秒;-->
+		//<!-- 记住我cookie生效时间30天 ,单位秒;-->
         simpleCookie.setMaxAge(259200);
         return simpleCookie;
     }

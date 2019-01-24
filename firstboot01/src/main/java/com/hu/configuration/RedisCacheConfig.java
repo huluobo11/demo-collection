@@ -1,9 +1,9 @@
 package com.hu.configuration;
 
-import groovy.util.logging.Slf4j;
+import java.lang.reflect.Method;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cache.CacheManager;
 import org.springframework.cache.annotation.CachingConfigurerSupport;
 import org.springframework.cache.annotation.EnableCaching;
@@ -17,8 +17,6 @@ import org.springframework.data.redis.connection.jedis.JedisConnectionFactory;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.serializer.RedisSerializer;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
-
-import java.lang.reflect.Method;
 
 @Configuration
 @EnableCaching
@@ -35,15 +33,8 @@ import java.lang.reflect.Method;
  * @author Angel(QQ:412887952)
  * @version v.0.1
  */
-@Slf4j
 public class RedisCacheConfig extends CachingConfigurerSupport {
 public final Logger log=LoggerFactory.getLogger(RedisCacheConfig.class);
-    @Value("${spring.redis.host}")
-    private String host;
-    @Value("${spring.redis.port}")
-    private Integer port;
-    /*@Value("${spring.redis.password}")
-    private String password;*/
 
     /**
      * 缓存管理器.
@@ -53,8 +44,8 @@ public final Logger log=LoggerFactory.getLogger(RedisCacheConfig.class);
      */
     @Scope("prototype")
     @Bean
-    public CacheManager cacheManager(RedisTemplate<?, ?> redisTemplate) {
-        CacheManager cacheManager = new RedisCacheManager(redisTemplate);
+    public CacheManager cacheManager(RedisConnectionFactory redisConnectionFactory) {
+        CacheManager cacheManager = RedisCacheManager.create(redisConnectionFactory);
         return cacheManager;
     }
 
@@ -73,12 +64,7 @@ public final Logger log=LoggerFactory.getLogger(RedisCacheConfig.class);
 
     @Bean
     public RedisConnectionFactory redisConnectionFactory() {
-        JedisConnectionFactory redisConnectionFactory = new JedisConnectionFactory();
-        redisConnectionFactory.setHostName(host);
-        redisConnectionFactory.setPort(port);
-       // redisConnectionFactory.setPassword(password);
-
-        return redisConnectionFactory;
+        return new JedisConnectionFactory();
     }
 
     /**
@@ -118,7 +104,5 @@ public final Logger log=LoggerFactory.getLogger(RedisCacheConfig.class);
             return sb.toString();
         };
         return keyGenerator;
-    }
-
-    ;
+    };
 }

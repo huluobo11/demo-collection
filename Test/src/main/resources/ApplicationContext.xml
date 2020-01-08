@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="
+			http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"> 
+	<!-- 创建一个bean对象 -->
+	<bean id="collid" class="com.ioc.test.coll">
+		<property name="username" value="张三"></property>
+		<property name="strArray">
+			<!-- <array>
+				<value>1</value>
+				<value>2</value>
+				<value>3</value>
+				<value>4</value>
+			</array> -->
+		</property>  
+	</bean>
+<bean  id="user"   class="com.ioc.test.User"></bean>
+</beans>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>    
+<!DOCTYPE mapper    
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"    
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssm.dao.UserMapper" >
+ 
+  <resultMap id="BaseResultMap" type="com.ssm.VO.User" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    </resultMap>
+     <resultMap id="ResultMapWithBLOBs" type="com.ssm.VO.User" extends="BaseResultMap" >
+    <result column="detail" property="detail" jdbcType="LONGVARCHAR" />
+  </resultMap>
+ <sql id="PK">
+ <where >
+ <if test="id!=null ">
+ 	id =#{id,jdbcType=INTEGER}
+ </if>
+ </where>
+ </sql>
+      
+ <select id="list" resultMap="ResultMapWithBLOBs" >select * from user </select>
+ <select id="getOneByPK"  parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs" >
+ select * from user 
+ <include refid="PK"></include>
+ </select>   
+ <select id="selectUserByName" parameterType="java.lang.String" resultMap="ResultMapWithBLOBs">
+    SELECT *
+    FROM user
+    <if test="name != null and name !=''"> 
+    	WHERE name like     concat('%',#{name},'%')   
+    	</if>
+  <!--   ORDER BY USER_ID                            concat('%',#{name},'%') -->
+</select>
+<insert id="addOneUser" useGeneratedKeys="true"  keyProperty="id" parameterType="com.ssm.VO.User">
+	insert into user(name)  values(#{name})
+</insert>
+<delete id="deleteOneUser" parameterType="com.ssm.VO.User" >
+<if test="#{id !=null and id!=0}"></if>
+ delete from user where id=#{id}
+</delete>
+<update id="updateOneUser"  parameterType="com.ssm.VO.User" >
+  	update user u set u.name=#{name} where u.id=#{id}
+</update>
+</mapper>

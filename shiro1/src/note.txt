@@ -1,0 +1,19 @@
+--------------------Shiro 认证的流程---------------------------
+1.先获取当前的subject，调用SecurityUtils.getSubject();
+2.查看当前用户是否已经被认证了，即是否已经登录了,调用Subject   的isAuthenticated()
+3.如果 没有被认证，则把用户名和密码封装成UsernamePasswordToken对象
+（1）创建一个表单页面。
+（2）把请求提交到SpringMVC的Handler
+（3）获取用户名和密码
+4.执行登录：调用Subjecty的login（Authenizat）方法
+5.自定义Realm的方法，从数据库中获取对应的记录，返回给Shiro
+（1）实际上需要extends org.apache.shiro.realm.AuthenticatingRealm类
+（2）实现doGetAuthticationInfo(AuthenticationToken)方法。
+6.由shiro完成对密码的比对。
+密码的比对是通过AuthenticatingRealm的credentialsMatcher属性比较。
+--------------------Shiro 授权的流程---------------------------
+1.需要继承org.apache.shiro.realm.AuthorizingRealm类，并实现
+其doGetAuthorizationInfo(PrincipalCollection principalcollection)方法。
+AuthorizingRealm类继承自AuthenticatingRealm类，但是没有实现doGetAuthorizationInfo方法，
+所以认证和授权只需要继承AuthorizingRealm就可以了，同时实现他的一，个抽象方法 。
+

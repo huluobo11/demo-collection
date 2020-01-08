@@ -69,7 +69,7 @@ target/
 .springBeans
 
 ### IntelliJ IDEA ###
-.idea
+.idea/
 *.iws
 *.iml
 *.ipr
@@ -106,3 +106,4 @@ gen/
 .project  
 .DS_Store
 .settings/
+.myeclipse/

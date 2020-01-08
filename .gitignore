@@ -82,7 +82,8 @@ dist/
 nbdist/
 .nb-gradle/
 
-
+  
+# Eclipse project files  
 /.settings/  
 /target/  
   
@@ -100,8 +101,8 @@ nbdist/
 # generated files  
 bin/  
 gen/  
-  
-# Eclipse project files  
+
 .classpath  
 .project  
 .DS_Store
+.settings/

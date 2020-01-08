@@ -11,9 +11,8 @@ import org.springframework.context.annotation.ComponentScan;
 
 import javax.servlet.MultipartConfigElement;
 
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages = {"com.hu"})
 //(exclude = {DataSourceAutoConfiguration.class})
-@ComponentScan(basePackages = {"cn.hu", "com.hu", "org.hu"})
 @ServletComponentScan // 注意要加上@ServletComponentScan注解，否则Servlet无法生效
 @EnableConfigurationProperties(Wisely2Settings.class)
 public class Springboot01Application {

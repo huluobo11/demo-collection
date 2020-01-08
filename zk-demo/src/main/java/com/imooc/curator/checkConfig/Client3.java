@@ -1,14 +1,11 @@
 package com.imooc.curator.checkConfig;
 
-import java.util.List;
 import java.util.concurrent.CountDownLatch;
 
 import org.apache.commons.lang3.StringUtils;
 import org.apache.curator.RetryPolicy;
 import org.apache.curator.framework.CuratorFramework;
 import org.apache.curator.framework.CuratorFrameworkFactory;
-import org.apache.curator.framework.recipes.cache.ChildData;
-import org.apache.curator.framework.recipes.cache.NodeCache;
 import org.apache.curator.framework.recipes.cache.PathChildrenCache;
 import org.apache.curator.framework.recipes.cache.PathChildrenCacheEvent;
 import org.apache.curator.framework.recipes.cache.PathChildrenCacheListener;
@@ -52,6 +49,7 @@ public class Client3 {
 		
 		// 添加监听事件
 		childrenCache.getListenable().addListener(new PathChildrenCacheListener() {
+			@Override
 			public void childEvent(CuratorFramework client, PathChildrenCacheEvent event) throws Exception {
 				// 监听节点变化
 				if(event.getType().equals(PathChildrenCacheEvent.Type.CHILD_UPDATED)){

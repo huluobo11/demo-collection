@@ -1,7 +1,7 @@
 /**
- * ¶ÔÒµÎñÐ´·½·¨¼ÓËø
- * ¶ÔÒµÎñ¶Á·½·¨²»¼ÓËø
- * ÈÝÒ×²úÉúÔà¶ÁÎÊÌâ£¨dirtyRead£©
+ * å¯¹ä¸šåŠ¡å†™æ–¹æ³•åŠ é”
+ * å¯¹ä¸šåŠ¡è¯»æ–¹æ³•ä¸åŠ é”
+ * å®¹æ˜“äº§ç”Ÿè„è¯»é—®é¢˜ï¼ˆdirtyReadï¼‰
  */
 
 package yxxy.c_008;

@@ -1,7 +1,7 @@
 /**
- * ½â¾öÍ¬ÑùµÄÎÊÌâµÄ¸ü¸ßÐ§µÄ·½·¨£¬Ê¹ÓÃAtomXXXÀà
- * AtomXXXÀà±¾Éí·½·¨¶¼ÊÇÔ­×ÓÐÔµÄ£¬µ«²»ÄÜ±£Ö¤¶à¸ö·½·¨Á¬Ðøµ÷ÓÃÊÇÔ­×ÓÐÔµÄ
- * @author mashibing
+ * è§£å†³åŒæ ·çš„é—®é¢˜çš„æ›´é«˜æ•ˆçš„æ–¹æ³•ï¼Œä½¿ç”¨AtomXXXç±»
+ * AtomXXXç±»æœ¬èº«æ–¹æ³•éƒ½æ˜¯åŽŸå­æ€§çš„ï¼Œä½†ä¸èƒ½ä¿è¯å¤šä¸ªæ–¹æ³•è¿žç»­è°ƒç”¨æ˜¯åŽŸå­æ€§çš„
+ *
  */
 package yxxy.c_015;
 
@@ -18,7 +18,9 @@ public class T {
 	/*synchronized*/ void m() { 
 		for (int i = 0; i < 10000; i++)
 			//if count.get() < 1000
+		{
 			count.incrementAndGet(); //count++
+		}
 	}
 
 	public static void main(String[] args) {

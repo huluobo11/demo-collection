@@ -1,8 +1,8 @@
 /**
- * reentrantlockÓÃÓÚÌæ´úsynchronized
- * ±¾ÀýÖÐÓÉÓÚm1Ëø¶¨this,Ö»ÓÐm1Ö´ÐÐÍê±ÏµÄÊ±ºò,m2²ÅÄÜÖ´ÐÐ
- * ÕâÀïÊÇ¸´Ï°synchronized×îÔ­Ê¼µÄÓïÒå
- * @author mashibing
+ * reentrantlockç”¨äºŽæ›¿ä»£synchronized
+ * æœ¬ä¾‹ä¸­ç”±äºŽm1é”å®šthis,åªæœ‰m1æ‰§è¡Œå®Œæ¯•çš„æ—¶å€™,m2æ‰èƒ½æ‰§è¡Œ
+ * è¿™é‡Œæ˜¯å¤ä¹ synchronizedæœ€åŽŸå§‹çš„è¯­ä¹‰
+ *
  */
 package yxxy.c_020;
 
@@ -28,6 +28,7 @@ public class ReentrantLock1 {
 	public static void main(String[] args) {
 		ReentrantLock1 rl = new ReentrantLock1();
 		new Thread(rl::m1).start();
+		new Thread(()-> rl.m1()).start();
 		try {
 			TimeUnit.SECONDS.sleep(1);
 		} catch (InterruptedException e) {

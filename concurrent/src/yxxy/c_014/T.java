@@ -1,6 +1,6 @@
 /**
- * ¶Ô±ÈÉÏÒ»¸ö³ÌĞò£¬¿ÉÒÔÓÃsynchronized½â¾ö£¬synchronized¿ÉÒÔ±£Ö¤¿É¼ûĞÔºÍÔ­×ÓĞÔ£¬volatileÖ»ÄÜ±£Ö¤¿É¼ûĞÔ
- * @author mashibing
+ * å¯¹æ¯”ä¸Šä¸€ä¸ªç¨‹åºï¼Œå¯ä»¥ç”¨synchronizedè§£å†³ï¼Œsynchronizedå¯ä»¥ä¿è¯å¯è§æ€§å’ŒåŸå­æ€§ï¼Œvolatileåªèƒ½ä¿è¯å¯è§æ€§
+ *
  */
 package yxxy.c_014;
 
@@ -12,8 +12,9 @@ public class T {
 	/*volatile*/ int count = 0;
 
 	synchronized void m() { 
-		for (int i = 0; i < 10000; i++)
+		for (int i = 0; i < 10000; i++) {
 			count++;
+		}
 	}
 
 	public static void main(String[] args) {

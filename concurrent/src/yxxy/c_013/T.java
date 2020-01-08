@@ -1,7 +1,7 @@
 /**
- * volatile²¢²»ÄÜ±£Ö¤¶à¸öÏß³Ì¹²Í¬ĞŞ¸Ärunning±äÁ¿Ê±Ëù´øÀ´µÄ²»Ò»ÖÂÎÊÌâ£¬Ò²¾ÍÊÇËµvolatile²»ÄÜÌæ´úsynchronized
- * ÔËĞĞÏÂÃæµÄ³ÌĞò£¬²¢·ÖÎö½á¹û
- * @author mashibing
+ * volatileå¹¶ä¸èƒ½ä¿è¯å¤šä¸ªçº¿ç¨‹å…±åŒä¿®æ”¹runningå˜é‡æ—¶æ‰€å¸¦æ¥çš„ä¸ä¸€è‡´é—®é¢˜ï¼Œä¹Ÿå°±æ˜¯è¯´volatileä¸èƒ½æ›¿ä»£synchronized
+ * è¿è¡Œä¸‹é¢çš„ç¨‹åºï¼Œå¹¶åˆ†æç»“æœ
+ *
  */
 package yxxy.c_013;
 
@@ -11,7 +11,9 @@ import java.util.List;
 public class T {
 	volatile int count = 0; 
 	void m() {
-		for(int i=0; i<10000; i++) count++;
+		for(int i=0; i<10000; i++) {
+			count++;
+		}
 	}
 	
 	public static void main(String[] args) {

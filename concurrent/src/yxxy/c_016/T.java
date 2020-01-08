@@ -1,8 +1,8 @@
 /**
- * synchronizedÓÅ»¯
- * Í¬²½´úÂë¿éÖÐµÄÓï¾äÔ½ÉÙÔ½ºÃ
- * ±È½Ïm1ºÍm2
- * @author mashibing
+ * synchronizedä¼˜åŒ–
+ * åŒæ­¥ä»£ç å—ä¸­çš„è¯­å¥è¶Šå°‘è¶Šå¥½
+ * æ¯”è¾ƒm1å’Œm2
+ *
  */
 package yxxy.c_016;
 
@@ -23,7 +23,7 @@ public class T {
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
-		//ÒµÎñÂß¼­ÖÐÖ»ÓÐÏÂÃæÕâ¾äÐèÒªsync£¬ÕâÊ±²»Ó¦¸Ã¸øÕû¸ö·½·¨ÉÏËø
+		//ä¸šåŠ¡é€»è¾‘ä¸­åªæœ‰ä¸‹é¢è¿™å¥éœ€è¦syncï¼Œè¿™æ—¶ä¸åº”è¯¥ç»™æ•´ä¸ªæ–¹æ³•ä¸Šé”
 		count ++;
 		
 		//do sth need not sync
@@ -41,8 +41,8 @@ public class T {
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
-		//ÒµÎñÂß¼­ÖÐÖ»ÓÐÏÂÃæÕâ¾äÐèÒªsync£¬ÕâÊ±²»Ó¦¸Ã¸øÕû¸ö·½·¨ÉÏËø
-		//²ÉÓÃÏ¸Á£¶ÈµÄËø£¬¿ÉÒÔÊ¹Ïß³ÌÕùÓÃÊ±¼ä±ä¶Ì£¬´Ó¶øÌá¸ßÐ§ÂÊ
+		//ä¸šåŠ¡é€»è¾‘ä¸­åªæœ‰ä¸‹é¢è¿™å¥éœ€è¦syncï¼Œè¿™æ—¶ä¸åº”è¯¥ç»™æ•´ä¸ªæ–¹æ³•ä¸Šé”
+		//é‡‡ç”¨ç»†ç²’åº¦çš„é”ï¼Œå¯ä»¥ä½¿çº¿ç¨‹äº‰ç”¨æ—¶é—´å˜çŸ­ï¼Œä»Žè€Œæé«˜æ•ˆçŽ‡
 		synchronized(this) {
 			count ++;
 		}

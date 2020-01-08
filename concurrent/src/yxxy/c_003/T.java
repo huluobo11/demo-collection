@@ -1,7 +1,7 @@
 /**
- * synchronized¹Ø¼ü×Ö
- * ¶ÔÄ³¸ö¶ÔÏó¼ÓËø
- * @author mashibing
+ * synchronizedå…³é”®å­—
+ * å¯¹æŸä¸ªå¯¹è±¡åŠ é”
+ *
  */
 
 package yxxy.c_003;
@@ -9,8 +9,9 @@ package yxxy.c_003;
 public class T {
 
 	private int count = 10;
-	
-	public synchronized void m() { //µÈÍ¬ÓÚÔÚ·½·¨µÄ´úÂëÖ´ĞĞÊ±Òªsynchronized(this)
+
+	public synchronized void m() {
+		// ç­‰åŒäºåœ¨æ–¹æ³•çš„ä»£ç æ‰§è¡Œæ—¶è¦synchronized(this)
 		count--;
 		System.out.println(Thread.currentThread().getName() + " count = " + count);
 	}

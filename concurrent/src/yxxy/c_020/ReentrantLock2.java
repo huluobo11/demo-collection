@@ -1,12 +1,12 @@
 /**
- * reentrantlockÓÃÓÚÌæ´úsynchronized
- * ÓÉÓÚm1Ëø¶¨this,Ö»ÓĞm1Ö´ĞĞÍê±ÏµÄÊ±ºò,m2²ÅÄÜÖ´ĞĞ
- * ÕâÀïÊÇ¸´Ï°synchronized×îÔ­Ê¼µÄÓïÒå
+ * reentrantlockç”¨äºæ›¿ä»£synchronized
+ * ç”±äºm1é”å®šthis,åªæœ‰m1æ‰§è¡Œå®Œæ¯•çš„æ—¶å€™,m2æ‰èƒ½æ‰§è¡Œ
+ * è¿™é‡Œæ˜¯å¤ä¹ synchronizedæœ€åŸå§‹çš„è¯­ä¹‰
  * 
- * Ê¹ÓÃreentrantlock¿ÉÒÔÍê³ÉÍ¬ÑùµÄ¹¦ÄÜ
- * ĞèÒª×¢ÒâµÄÊÇ£¬±ØĞëÒª±ØĞëÒª±ØĞëÒªÊÖ¶¯ÊÍ·ÅËø£¨ÖØÒªµÄÊÂÇéËµÈı±é£©
- * Ê¹ÓÃsynËø¶¨µÄ»°Èç¹ûÓöµ½Òì³££¬jvm»á×Ô¶¯ÊÍ·ÅËø£¬µ«ÊÇlock±ØĞëÊÖ¶¯ÊÍ·ÅËø£¬Òò´Ë¾­³£ÔÚfinallyÖĞ½øĞĞËøµÄÊÍ·Å
- * @author mashibing
+ * ä½¿ç”¨reentrantlockå¯ä»¥å®ŒæˆåŒæ ·çš„åŠŸèƒ½
+ * éœ€è¦æ³¨æ„çš„æ˜¯ï¼Œå¿…é¡»è¦å¿…é¡»è¦å¿…é¡»è¦æ‰‹åŠ¨é‡Šæ”¾é”ï¼ˆé‡è¦çš„äº‹æƒ…è¯´ä¸‰éï¼‰
+ * ä½¿ç”¨syné”å®šçš„è¯å¦‚æœé‡åˆ°å¼‚å¸¸ï¼Œjvmä¼šè‡ªåŠ¨é‡Šæ”¾é”ï¼Œä½†æ˜¯lockå¿…é¡»æ‰‹åŠ¨é‡Šæ”¾é”ï¼Œå› æ­¤ç»å¸¸åœ¨finallyä¸­è¿›è¡Œé”çš„é‡Šæ”¾
+ *
  */
 package yxxy.c_020;
 
@@ -18,8 +18,8 @@ public class ReentrantLock2 {
 	Lock lock = new ReentrantLock();
 
 	void m1() {
+		lock.lock(); //synchronized(this)
 		try {
-			lock.lock(); //synchronized(this)
 			for (int i = 0; i < 10; i++) {
 				TimeUnit.SECONDS.sleep(1);
 

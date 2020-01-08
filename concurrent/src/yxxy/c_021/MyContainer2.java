@@ -1,13 +1,13 @@
 /**
- * ÃæÊÔÌâ£ºĞ´Ò»¸ö¹Ì¶¨ÈİÁ¿Í¬²½ÈİÆ÷£¬ÓµÓĞputºÍget·½·¨£¬ÒÔ¼°getCount·½·¨£¬
- * ÄÜ¹»Ö§³Ö2¸öÉú²úÕßÏß³ÌÒÔ¼°10¸öÏû·ÑÕßÏß³ÌµÄ×èÈûµ÷ÓÃ
+ * é¢è¯•é¢˜ï¼šå†™ä¸€ä¸ªå›ºå®šå®¹é‡åŒæ­¥å®¹å™¨ï¼Œæ‹¥æœ‰putå’Œgetæ–¹æ³•ï¼Œä»¥åŠgetCountæ–¹æ³•ï¼Œ
+ * èƒ½å¤Ÿæ”¯æŒ2ä¸ªç”Ÿäº§è€…çº¿ç¨‹ä»¥åŠ10ä¸ªæ¶ˆè´¹è€…çº¿ç¨‹çš„é˜»å¡è°ƒç”¨
  * 
- * Ê¹ÓÃwaitºÍnotify/notifyAllÀ´ÊµÏÖ
+ * ä½¿ç”¨waitå’Œnotify/notifyAllæ¥å®ç°
  * 
- * Ê¹ÓÃLockºÍConditionÀ´ÊµÏÖ
- * ¶Ô±ÈÁ½ÖÖ·½Ê½£¬ConditionµÄ·½Ê½¿ÉÒÔ¸ü¼Ó¾«È·µÄÖ¸¶¨ÄÄĞ©Ïß³Ì±»»½ĞÑ
+ * ä½¿ç”¨Lockå’ŒConditionæ¥å®ç°
+ * å¯¹æ¯”ä¸¤ç§æ–¹å¼ï¼ŒConditionçš„æ–¹å¼å¯ä»¥æ›´åŠ ç²¾ç¡®çš„æŒ‡å®šå“ªäº›çº¿ç¨‹è¢«å”¤é†’
  * 
- * @author mashibing
+ *
  */
 package yxxy.c_021;
 
@@ -19,7 +19,7 @@ import java.util.concurrent.locks.ReentrantLock;
 
 public class MyContainer2<T> {
 	final private LinkedList<T> lists = new LinkedList<>();
-	final private int MAX = 10; //×î¶à10¸öÔªËØ
+	final private int MAX = 10; //æœ€å¤š10ä¸ªå…ƒç´ 
 	private int count = 0;
 	
 	private Lock lock = new ReentrantLock();
@@ -29,13 +29,13 @@ public class MyContainer2<T> {
 	public void put(T t) {
 		try {
 			lock.lock();
-			while(lists.size() == MAX) { //ÏëÏëÎªÊ²Ã´ÓÃwhile¶ø²»ÊÇÓÃif£¿
+			while(lists.size() == MAX) { //æƒ³æƒ³ä¸ºä»€ä¹ˆç”¨whileè€Œä¸æ˜¯ç”¨ifï¼Ÿ
 				producer.await();
 			}
 			
 			lists.add(t);
 			++count;
-			consumer.signalAll(); //Í¨ÖªÏû·ÑÕßÏß³Ì½øĞĞÏû·Ñ
+			consumer.signalAll(); //é€šçŸ¥æ¶ˆè´¹è€…çº¿ç¨‹è¿›è¡Œæ¶ˆè´¹
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		} finally {
@@ -52,7 +52,7 @@ public class MyContainer2<T> {
 			}
 			t = lists.removeFirst();
 			count --;
-			producer.signalAll(); //Í¨ÖªÉú²úÕß½øĞĞÉú²ú
+			producer.signalAll(); //é€šçŸ¥ç”Ÿäº§è€…è¿›è¡Œç”Ÿäº§
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		} finally {
@@ -63,7 +63,7 @@ public class MyContainer2<T> {
 	
 	public static void main(String[] args) {
 		MyContainer2<String> c = new MyContainer2<>();
-		//Æô¶¯Ïû·ÑÕßÏß³Ì
+		//å¯åŠ¨æ¶ˆè´¹è€…çº¿ç¨‹
 		for(int i=0; i<10; i++) {
 			new Thread(()->{
 				for(int j=0; j<5; j++) System.out.println(c.get());
@@ -76,7 +76,7 @@ public class MyContainer2<T> {
 			e.printStackTrace();
 		}
 		
-		//Æô¶¯Éú²úÕßÏß³Ì
+		//å¯åŠ¨ç”Ÿäº§è€…çº¿ç¨‹
 		for(int i=0; i<2; i++) {
 			new Thread(()->{
 				for(int j=0; j<25; j++) c.put(Thread.currentThread().getName() + " " + j);

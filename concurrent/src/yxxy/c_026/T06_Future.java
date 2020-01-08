@@ -1,5 +1,5 @@
 /**
- * ÈÏÊ¶future
+ * è®¤è¯†future
  */
 package yxxy.c_026;
 
@@ -20,7 +20,7 @@ public class T06_Future {
 		
 		new Thread(task).start();
 		
-		System.out.println(task.get()); //×èÈû
+		System.out.println(task.get()); //é˜»å¡
 		
 		//*******************************
 		ExecutorService service = Executors.newFixedThreadPool(5);

@@ -17,7 +17,7 @@ public class T14_ParallelStreamAPI {
 		long end = System.currentTimeMillis();
 		System.out.println(end - start);
 		
-		//Ê¹ÓÃparallel stream api
+		//ä½¿ç”¨parallel stream api
 		
 		start = System.currentTimeMillis();
 		nums.parallelStream().forEach(T14_ParallelStreamAPI::isPrime);

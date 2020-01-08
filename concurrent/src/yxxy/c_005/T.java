@@ -1,6 +1,6 @@
 /**
- * 分析一下这个程序的输出
- * @author mashibing
+ * 鍒嗘瀽涓�涓嬭繖涓▼搴忕殑杈撳嚭
+ *
  */
 
 package yxxy.c_005;
@@ -9,7 +9,8 @@ public class T implements Runnable {
 
 	private int count = 10;
 	
-	public /*synchronized*/ void run() { 
+	@Override
+	public /*synchronized*/ void run() {
 		count--;
 		System.out.println(Thread.currentThread().getName() + " count = " + count);
 	}

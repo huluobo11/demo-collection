@@ -1,19 +1,18 @@
 package com.imooc.curator.checkConfig;
 
-import java.util.concurrent.CountDownLatch;
-
+import com.imooc.utils.JsonUtils;
+import com.imooc.utils.RedisConfig;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.curator.RetryPolicy;
 import org.apache.curator.framework.CuratorFramework;
 import org.apache.curator.framework.CuratorFrameworkFactory;
 import org.apache.curator.framework.recipes.cache.PathChildrenCache;
+import org.apache.curator.framework.recipes.cache.PathChildrenCache.StartMode;
 import org.apache.curator.framework.recipes.cache.PathChildrenCacheEvent;
 import org.apache.curator.framework.recipes.cache.PathChildrenCacheListener;
-import org.apache.curator.framework.recipes.cache.PathChildrenCache.StartMode;
 import org.apache.curator.retry.RetryNTimes;
 
-import com.imooc.utils.JsonUtils;
-import com.imooc.utils.RedisConfig;
+import java.util.concurrent.CountDownLatch;
 
 public class Client2 {
 

@@ -300,16 +300,11 @@
 			<plugin>
 				<artifactId>maven-war-plugin</artifactId>
 				<version>2.4</version>
-				<configuration>
-					<version>3.0</version>
-				</configuration>
+
 			</plugin>
 			<plugin>
 				<artifactId>maven-clean-plugin</artifactId>
 				<version>2.4</version>
-				<configuration>
-					<version>3.0</version>
-				</configuration>
 			</plugin>
 			<!-- 配置tomcat插件 -->
 			<plugin>

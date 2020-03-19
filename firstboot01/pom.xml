@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.hu</groupId>
-    <artifactId>springboot01</artifactId>
+    <artifactId>firstboot01</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>war</packaging>
 

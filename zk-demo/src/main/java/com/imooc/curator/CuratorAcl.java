@@ -1,19 +1,16 @@
 package com.imooc.curator;
 
-import java.util.ArrayList;
-import java.util.List;
-
+import com.imooc.utils.AclUtils;
 import org.apache.curator.RetryPolicy;
 import org.apache.curator.framework.CuratorFramework;
 import org.apache.curator.framework.CuratorFrameworkFactory;
 import org.apache.curator.retry.RetryNTimes;
-import org.apache.zookeeper.CreateMode;
-import org.apache.zookeeper.ZooDefs.Ids;
 import org.apache.zookeeper.ZooDefs.Perms;
 import org.apache.zookeeper.data.ACL;
 import org.apache.zookeeper.data.Id;
 
-import com.imooc.utils.AclUtils;
+import java.util.ArrayList;
+import java.util.List;
 
 public class CuratorAcl {
 

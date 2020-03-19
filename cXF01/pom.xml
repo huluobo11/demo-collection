@@ -7,7 +7,7 @@
     <artifactId>cXF01</artifactId>
     <packaging>war</packaging>
     <version>0.0.1-SNAPSHOT</version>
-    <name>xFire</name>
+    <name>cXF01</name>
     <url>http://maven.apache.org</url>
     <dependencies>
         <dependency>

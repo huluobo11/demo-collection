@@ -14,6 +14,7 @@
         <module>cXF01</module>
         <module>firstboot01</module>
         <module>quartz-demo</module>
+        <module>shiro1</module>
     </modules>
     
     <groupId>com.demo</groupId>

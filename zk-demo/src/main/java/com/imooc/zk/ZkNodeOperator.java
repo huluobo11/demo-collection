@@ -1,11 +1,9 @@
-package com.zk.demo;
+package com.imooc.zk;
 
 
 import org.apache.zookeeper.*;
 import org.apache.zookeeper.ZooDefs.Ids;
 import org.apache.zookeeper.data.Stat;
-
-import java.sql.SQLOutput;
 
 
 public class ZkNodeOperator implements Watcher {

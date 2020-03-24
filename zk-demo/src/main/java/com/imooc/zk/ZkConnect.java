@@ -1,4 +1,4 @@
-package com.zk.demo;
+package com.imooc.zk;
 
 import org.apache.zookeeper.WatchedEvent;
 import org.apache.zookeeper.Watcher;

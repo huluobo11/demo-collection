@@ -1,4 +1,4 @@
-package com.zk.demo;
+package com.imooc.zk;
 
 import java.io.UnsupportedEncodingException;
 import java.util.concurrent.CountDownLatch;

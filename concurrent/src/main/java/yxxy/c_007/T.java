@@ -12,6 +12,7 @@ public class T {
 		try {
 			Thread.sleep(10000);
 		} catch (InterruptedException e) {
+			Thread.currentThread().interrupt();
 			e.printStackTrace();
 		}
 		System.out.println(Thread.currentThread().getName() + " m1 end");

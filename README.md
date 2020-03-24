@@ -5,6 +5,9 @@
 - shiro
 - zookeeper
 - springboot
+- mybatis-plus
 - qrcode
 - qqmail
+- quartz
+- security
 - etc.

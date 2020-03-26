@@ -10,4 +10,5 @@
 - qqmail
 - quartz
 - security
+- elasticsearch
 - etc.

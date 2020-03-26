@@ -58,7 +58,6 @@ public class BrowserSecurityConfig extends WebSecurityConfigurerAdapter {
         ;
         //    在实际开发中，发现Session并发控制只对Spring Security默认的登录方式——账号密码登录有效，而像短信验证码登录，社交账号登录并不生效
 
-
 //        Session集群处理
 //        把Session信息存储在第三方容器里（如Redis集群），而不是各自的服务器
 //        1.在pom.xml 中引入 spring-session、spring-boot-starter-data-redis 两个坐标

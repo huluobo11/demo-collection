@@ -23,7 +23,7 @@ public class MyAuthenticationSucessHandler implements AuthenticationSuccessHandl
     @Override
     public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response,
                                         Authentication authentication) throws IOException, ServletException {
-        System.out.println("登录成功");
+
         SavedRequest savedRequest = requestCache.getRequest(request, response);
         redirectStrategy.sendRedirect(request, response, savedRequest.getRedirectUrl());
     }
